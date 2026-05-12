@@ -54,7 +54,7 @@
 
 ```
 src/
-└── <app_name>/                 # nome Briefcase (ex. assinatura_pdf)
+└── <app_name>/                 # nome Briefcase (ex. marcaja)
     ├── app.py                  # App(...), startup, MainWindow
     ├── ui/
     │   └── main_view.py        # construção da árvore de widgets e binding

@@ -1,4 +1,4 @@
-# Marca d'água local (Android)
+# MarcaJá
 
 ## What This Is
 
@@ -75,4 +75,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-12 after initialization from projeto.md*
+*Last updated: 2026-05-12 after adopting product name MarcaJá*

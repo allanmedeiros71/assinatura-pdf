@@ -1,6 +1,6 @@
 # Project Research Summary
 
-**Project:** Marca d'água local (Android)
+**Project:** MarcaJá (Android, app local de marca d'água em PDF/imagem)
 **Domain:** App Android nativo em Python (BeeWare: Briefcase + Toga) — marca d'água em lote sobre PDFs/imagens, saída em PDF “endurecido” (texto não copiável, sem OCR útil), 100% no dispositivo
 **Researched:** 2026-05-12
 **Confidence:** MEDIUM

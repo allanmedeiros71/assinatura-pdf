@@ -1,9 +1,9 @@
-# Especificação de Requisitos: Sistema de adição de Marca d'Água
+# Especificação de Requisitos: MarcaJá
 
 ## 1. Visão Geral
 
 - Nome do Projeto
-TODO: Criar um nome criativo para o projeto
+**MarcaJá** — marca d'água rápida em PDFs e imagens no Android (app local).
 
 - Objetivo
 Eventualmente eu preciso enviar documentos em formato PDF ou foto (captura de tela) para fornecedores de serviços, ex: seguradora, concessionárias, bancos etc. Para evitar o uso indevido dos meus documentos e garantir minha segurança gostaria de uma forma rápida e ágil de fazer o upload do documento e inserir uma marca d'água com um texto informado no momento do upload.

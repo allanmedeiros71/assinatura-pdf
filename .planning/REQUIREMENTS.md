@@ -1,4 +1,4 @@
-# Requirements: Marca d'água local (Android)
+# Requirements: MarcaJá
 
 **Defined:** 2026-05-12  
 **Core Value:** Marcar vários PDFs/imagens de uma vez e obter PDFs endurecidos (texto não copiável, sem OCR útil) no smartphone, 100% local.
@@ -110,4 +110,4 @@
 
 ---
 *Requirements defined: 2026-05-12*  
-*Last updated: 2026-05-12 after roadmap traceability*
+*Last updated: 2026-05-12 after product rename to MarcaJá*

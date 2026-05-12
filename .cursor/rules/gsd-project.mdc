@@ -1,12 +1,12 @@
 ---
-description: Contexto GSD — app Android BeeWare de marca d'água em PDF
+description: Contexto GSD — MarcaJá (BeeWare Android, marca d'água em PDF)
 alwaysApply: true
 ---
 
 <!-- gsd-project-start source:PROJECT.md -->
 ## Project
 
-App Android **local** (Python + BeeWare): uma tela, lote de PDF/imagem, texto de marca (≤200 caracteres), saída **PDF endurecido**. Ver `.planning/PROJECT.md` para detalhe e decisões.
+**MarcaJá** — app Android **local** (Python + BeeWare): uma tela, lote de PDF/imagem, texto de marca (≤200 caracteres), saída **PDF endurecido**. Ver `.planning/PROJECT.md` para detalhe e decisões.
 <!-- gsd-project-end -->
 
 <!-- gsd-stack-start source:.planning/research/STACK.md -->

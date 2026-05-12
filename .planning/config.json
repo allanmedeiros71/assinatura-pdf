@@ -51,7 +51,7 @@
   "hooks": {
     "context_warnings": true
   },
-  "project_code": "ASSIN-PDF",
+  "project_code": "MARCAJA",
   "agent_skills": {},
   "claude_md_path": "./CLAUDE.md"
 }
