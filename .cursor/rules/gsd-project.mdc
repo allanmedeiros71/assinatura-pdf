@@ -1,0 +1,30 @@
+---
+description: Contexto GSD — app Android BeeWare de marca d'água em PDF
+alwaysApply: true
+---
+
+<!-- gsd-project-start source:PROJECT.md -->
+## Project
+
+App Android **local** (Python + BeeWare): uma tela, lote de PDF/imagem, texto de marca (≤200 caracteres), saída **PDF endurecido**. Ver `.planning/PROJECT.md` para detalhe e decisões.
+<!-- gsd-project-end -->
+
+<!-- gsd-stack-start source:.planning/research/STACK.md -->
+## Technology Stack
+
+Resumo em `.planning/research/SUMMARY.md`; stack prescritiva em `.planning/research/STACK.md` (Briefcase/Toga, motor PDF Android com spike/gate).
+<!-- gsd-stack-end -->
+
+<!-- gsd-workflow-start source:GSD defaults -->
+## GSD Workflow Enforcement
+
+Antes de alterações estruturais ao produto, alinhar com fases em `.planning/ROADMAP.md` e requisitos em `.planning/REQUIREMENTS.md`.
+
+Pontos de entrada típicos: `/gsd-discuss-phase N`, `/gsd-plan-phase N`, `/gsd-execute-phase`. Para ajustes pequenos: `/gsd-quick`.
+<!-- gsd-workflow-end -->
+
+<!-- gsd-profile-start -->
+## Developer Profile
+
+> Perfil não configurado. Opcional: `/gsd-profile-user`.
+<!-- gsd-profile-end -->
