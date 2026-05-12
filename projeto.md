@@ -10,7 +10,7 @@ Eventualmente eu preciso enviar documentos em formato PDF ou foto (captura de te
 
 ## 2. Segurança e Autenticação
 
-- Não há necessidade de autenticação, o sistema vai rodar localmente no smartfone
+- Não há necessidade de autenticação, o sistema vai rodar localmente no smartphone
 
 ## 3. Auditoria e Logs
 
@@ -21,7 +21,7 @@ Eventualmente eu preciso enviar documentos em formato PDF ou foto (captura de te
 - Não há necessidade de gestão de acesso e perfis
 
 ## 5. Requisitos Funcionais (RF)
-- O sistema deve ter somente uma tela. Ao ebir o sistema essa tela deve ser exibida.
+- O sistema deve ter somente uma tela. Ao abrir o sistema essa tela deve ser exibida.
 - A tela deve ter dois campos, um botão "Ok" e um botão "Sair"
 - O sistema deve ter dois campos: 1 campo para upload de arquivos (pdf e imagens) e 1 campo para texto.
 - Deve ser permitido upload de mais de um arquivo por vez
@@ -32,11 +32,11 @@ Eventualmente eu preciso enviar documentos em formato PDF ou foto (captura de te
 ## 6. Requisitos Não Funcionais (RNF)
 
 - O sistema deve calcular o ângulo certo e o tamanho da fonte para inserir a marca d'água para que o resultado seja visualmente interessante.
-- O ângulo da marca dágua deve ser calculado de tal forma que a inclinação do texto esteja alinhada com a inclinação da reta que liga o canto inferior esquero e o canto superior direito do documento.
+- O ângulo da marca d'água deve ser calculado de tal forma que a inclinação do texto esteja alinhada com a inclinação da reta que liga o canto inferior esquerdo e o canto superior direito do documento.
 - O tamanho da fonte do texto da marca d'água deve ser calculado de forma proporcional a ocupar toda a área que liga os cantos inferior esquerdo e superior direito.
 - É permitido quebrar o texto em mais de uma linha caso este seja muito longo e o tamanho da fonte fique muito pequeno
 - Devem ser usadas fontes da família Arial ou equivalente que sejam open source
-- Os arquivos disponibilizados para download devem ser no formato PDF, bloqueados para ccopiar o texto, independentemente do formato dos arquivos de entrada.
+- Os arquivos disponibilizados para download devem ser no formato PDF, bloqueados para copiar o texto, independentemente do formato dos arquivos de entrada.
 - Deve ser removido qualquer OCR disponível
 
 ## 7. Regras de Negócio (RN)

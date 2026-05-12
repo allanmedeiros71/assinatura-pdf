@@ -1,0 +1,30 @@
+---
+description: Idioma padrão do repositório — português do Brasil (pt-BR)
+alwaysApply: true
+---
+
+## Português do Brasil (padrão)
+
+Todo **texto produzido neste repositório** (documentação em `.planning/`, `projeto.md`, comentários de código voltados a humanos, mensagens de UI quando não houver cópia oficial em outro idioma) e as **respostas do assistente** à equipe devem usar **português do Brasil (pt-BR)**.
+
+### Preferências de vocabulário (evitar português de Portugal)
+
+| Preferir (pt-BR) | Evitar (pt-PT) |
+|------------------|----------------|
+| usuário | utilizador |
+| arquivo(s) | ficheiro(s) |
+| tela | ecrã |
+| aplicativo / app | aplicação (quando for software móvel) |
+| compartilhar, salvar | partilhar, guardar |
+| porcentagem | percentagem |
+| registro | registo |
+| selecionável, objetivo, exato | seleccionável, objectivo, exacto |
+| arquitetura | arquitectura |
+| liberar / liberação | libertar / libertação |
+| artefato(s) | artefacto(s) |
+| contêiner | contentor |
+| em outra | noutra |
+
+**Artigos com “tela”:** usar *a tela* / *da tela* (evitar *o tela* / *do tela*).
+
+Se uma citação ou documentação externa estiver em outra variante, **não alterar** o original; o texto à volta continua em pt-BR.

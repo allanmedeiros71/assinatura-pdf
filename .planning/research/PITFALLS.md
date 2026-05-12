@@ -9,16 +9,16 @@
 ### Pitfall 1: Prometer “segurança forte” com truques de PDF em vez de modelo de dados
 
 **What goes wrong:**  
-Stakeholders ou utilizadores assumem que “PDF com restrições + sem texto selecionável” impede extração ou reutilização do conteúdo. Na prática, **permissões de PDF e flags de cópia são orientação ao leitor**, não criptografia; rasterização mal feita pode deixar **streams de texto, anotações, metadados ou camadas OCR**; mesmo com página só em imagem, **OCR pode ser voltado a aplicar** ao resultado (novo texto “recuperável”). Screenshots e fotografias do ecrã contornam qualquer solução puramente de ficheiro.
+Stakeholders ou usuários assumem que “PDF com restrições + sem texto selecionável” impede extração ou reutilização do conteúdo. Na prática, **permissões de PDF e flags de cópia são orientação ao leitor**, não criptografia; rasterização mal feita pode deixar **streams de texto, anotações, metadados ou camadas OCR**; mesmo com página só em imagem, **OCR pode ser voltado a aplicar** ao resultado (novo texto “recuperável”). Screenshots e capturas de tela contornam qualquer solução puramente de arquivo.
 
 **Why it happens:**  
-Confundir **experiência de utilizador** (não consigo copiar no Acrobat) com **garantia de confidencialidade**. PDF é um contentor de objetos com múltiplas representações (aparência vs. texto vs. invisible text).
+Confundir **experiência de usuário** (não consigo copiar no Acrobat) com **garantia de confidencialidade**. PDF é um contêiner de objetos com múltiplas representações (aparência vs. texto vs. invisible text).
 
 **How to avoid:**  
-Definir **mensagem de produto honesta**: ex. “dificulta cópia de texto e reutilização casual”, não “impossível extrair”. Tecnicamente: pipeline que **elimina ou substitui todo o conteúdo vetorial/texto**, remove **Tagged PDF / estruturas acessíveis** quando aplicável, **anexos e comentários**, e valida o output com extração de texto + inspeção de camadas. Documentar limitações (OCR de terceiros, fotografia do ecrã).
+Definir **mensagem de produto honesta**: ex. “dificulta cópia de texto e reutilização casual”, não “impossível extrair”. Tecnicamente: pipeline que **elimina ou substitui todo o conteúdo vetorial/texto**, remove **Tagged PDF / estruturas acessíveis** quando aplicável, **anexos e comentários**, e valida o output com extração de texto + inspeção de camadas. Documentar limitações (OCR de terceiros, captura de tela).
 
 **Warning signs:**  
-Ainda consegue-se copiar texto no visualizador; `strings` ou ferramentas de extração mostram texto; ficheiro desce de tamanho mas mantém estrutura rica; testes só em “pré-visualização” do próprio app.
+Ainda consegue-se copiar texto no visualizador; `strings` ou ferramentas de extração mostram texto; arquivo desce de tamanho mas mantém estrutura rica; testes só em “pré-visualização” do próprio app.
 
 **Phase to address:**  
 Fase de **contrato de segurança do PDF + validação** (antes de UX final).
@@ -37,29 +37,29 @@ OCR é frequentemente uma **subcamada de texto** independente da imagem; ferrame
 Tratar “remover OCR” como **reconstrução da página**: rasterizar (ou reflow) e **garantir ausência de operadores de texto** e de **dicionários de OCR** associados; revalidar com leitores e bibliotecas de extração. Se a entrada já for só imagem, decidir explicitamente se o output **re-OCR** é aceitável para o caso de uso (geralmente não, se o objetivo é minimizar texto máquina-legível).
 
 **Warning signs:**  
-Pesquisa no PDF ainda encontra palavras da página original; tamanho do ficheiro sugere streams duplicados; acessibilidade ainda anuncia texto.
+Pesquisa no PDF ainda encontra palavras da página original; tamanho do arquivo sugere streams duplicados; acessibilidade ainda anuncia texto.
 
 **Phase to address:**  
 **Pipeline PDF** (mesma fase que geração da saída “endurecida”).
 
 ---
 
-### Pitfall 3: Tratar caminhos de ficheiro no Android como no `briefcase dev`
+### Pitfall 3: Tratar caminhos de arquivo no Android como no `briefcase dev`
 
 **What goes wrong:**  
-Código que usa `open()` com **path POSIX** ou diretórios “ao lado do script” funciona no desktop e **falha no dispositivo** (`FileNotFoundError`, pastas sob `files/` ou Chaquopy que não existem no momento esperado). Com **Storage Access Framework (SAF)**, o utilizador devolve **content URI**, não path estável — leitura/escrita exige **ContentResolver**, streams temporários e, muitas vezes, **cópia para cache interno** antes de bibliotecas PDF que só aceitam `path`.
+Código que usa `open()` com **path POSIX** ou diretórios “ao lado do script” funciona no desktop e **falha no dispositivo** (`FileNotFoundError`, pastas sob `files/` ou Chaquopy que não existem no momento esperado). Com **Storage Access Framework (SAF)**, o usuário devolve **content URI**, não path estável — leitura/escrita exige **ContentResolver**, streams temporários e, muitas vezes, **cópia para cache interno** antes de bibliotecas PDF que só aceitam `path`.
 
 **Why it happens:**  
 Diferença entre **filesystem do pacote**, **scoped storage** e **URIs revogáveis**; exemplos e tutoriais BeeWare/desktop não stressam I/O real em Android.
 
 **How to avoid:**  
-Testar cedo em **hardware/emulador**; encapsular “obter bytes do input” e “entregar output” numa camada que suporte **URI + ficheiro temporário**; confirmar versão de **Toga**/`open_file_dialog` e documentação atual (Android usa **Intents** / `start_activity` onde necessário — ver referência oficial Toga Android).
+Testar cedo em **hardware/emulador**; encapsular “obter bytes do input” e “entregar output” numa camada que suporte **URI + arquivo temporário**; confirmar versão de **Toga**/`open_file_dialog` e documentação atual (Android usa **Intents** / `start_activity` onde necessário — ver referência oficial Toga Android).
 
 **Warning signs:**  
-Só testado com ficheiros em `~/Downloads` no Mac; exceções só no primeiro run Android; permissões declaradas mas URI nunca persistido.
+Só testado com arquivos em `~/Downloads` no Mac; exceções só no primeiro run Android; permissões declaradas mas URI nunca persistido.
 
 **Phase to address:**  
-**Integração Android + seleção de ficheiros** (fase inicial, em paralelo com spike de PDF).
+**Integração Android + seleção de arquivos** (fase inicial, em paralelo com spike de PDF).
 
 ---
 
@@ -69,10 +69,10 @@ Só testado com ficheiros em `~/Downloads` no Mac; exceções só no primeiro ru
 **Rasterização página a página** com pixmaps de alta resolução, ou PDFs com **content streams enormes**, pode causar **OOM** ou matar o processo Chaquopy. Bibliotecas como **PyMuPDF** podem reter memória após `get_pixmap()` se o ciclo de vida de `Document`/`Pixmap` não for gerido; **pypdf** tem relatos de uso extremo de RAM em páginas “pesadas”.
 
 **Why it happens:**  
-Desktop tem margem; telemóvel não. Processar **vários ficheiros em paralelo** ou manter **todos os bytes** em memória multiplica o pico.
+Desktop tem margem; telemóvel não. Processar **vários arquivos em paralelo** ou manter **todos os bytes** em memória multiplica o pico.
 
 **How to avoid:**  
-Pipeline **sequencial** por ficheiro e por página; limites explícitos (DPI máximo, dimensão máxima da página, recusa ou downscale de entradas anómalas); **`close()`** / libertação explícita; testes com PDFs grandes reais; considerar escrita em disco temporário em chunks quando a API permitir.
+Pipeline **sequencial** por arquivo e por página; limites explícitos (DPI máximo, dimensão máxima da página, recusa ou downscale de entradas anómalas); **`close()`** / liberação explícita; testes com PDFs grandes reais; considerar escrita em disco temporário em chunks quando a API permitir.
 
 **Warning signs:**  
 App reinicia ao processar certos anexos; crescimento monotónico de memória em lote; ANRs durante escrita do PDF.
@@ -85,16 +85,16 @@ App reinicia ao processar certos anexos; crescimento monotónico de memória em 
 ### Pitfall 5: Usar Arial embutido sem licença (e ignorar obrigações de fontes open source)
 
 **What goes wrong:**  
-**Arial** é propriedade da Monotype; embutir ou redistribuir sem licença adequada expõe a **risco legal** e rejeição em lojas. Mesmo com **Liberation Sans / Arimo** (alternativas comuns), licenças tipo **SIL OFL** exigem **créditos e ficheiros de licença** no pacote da app e boas práticas de **Reserved Font Names** se houver subsetting com renomeação incorreta.
+**Arial** é propriedade da Monotype; embutir ou redistribuir sem licença adequada expõe a **risco legal** e rejeição em lojas. Mesmo com **Liberation Sans / Arimo** (alternativas comuns), licenças tipo **SIL OFL** exigem **créditos e arquivos de licença** no pacote da app e boas práticas de **Reserved Font Names** se houver subsetting com renomeação incorreta.
 
 **Why it happens:**  
 “Arial ou equivalente” na especificação é lido como “usar Arial do sistema”; no Android + bundle BeeWare o que conta é **o que vai no APK** e o que o motor PDF embute.
 
 **How to avoid:**  
-Escolher uma família **OFL** (ex. Liberation Sans), **incluir LICENSE + COPYRIGHT** na app (ecrã Sobre / assets legais), e validar subsetting/embedding conforme a licença da fonte escolhida.
+Escolher uma família **OFL** (ex. Liberation Sans), **incluir LICENSE + COPYRIGHT** na app (tela Sobre / assets legais), e validar subsetting/embedding conforme a licença da fonte escolhida.
 
 **Warning signs:**  
-Nenhum ficheiro de licença de fontes no repositório; PDF gerado referencia fontes não empacotadas de forma ambígua.
+Nenhum arquivo de licença de fontes no repositório; PDF gerado referencia fontes não empacotadas de forma ambígua.
 
 **Phase to address:**  
 **Fundação do projeto + conformidade** (início).
@@ -124,9 +124,9 @@ Mensagens do tipo “No matching distributions” ou “Could not find a version
 
 | Shortcut | Immediate Benefit | Long-term Cost | When Acceptable |
 |----------|-------------------|----------------|-----------------|
-| Confiar só em **flags de permissão PDF** (sem rasterizar) | Implementação rápida | Utilizador avançado ou ferramenta ignora restrições; falsa sensação de segurança | **Nunca** para o valor prometido no PROJECT.md |
+| Confiar só em **flags de permissão PDF** (sem rasterizar) | Implementação rápida | Usuário avançado ou ferramenta ignora restrições; falsa sensação de segurança | **Nunca** para o valor prometido no PROJECT.md |
 | Rasterizar mas **não limpar metadados/XMP** | Menos código | Fuga de dados contextuais (autor, título, software) | MVP interno apenas; documentar |
-| **Bufferizar PDF inteiro** em `bytes` para cada item do lote | Código simples | OOM em lotes médios | Apenas ficheiros pequenos com limite rígido documentado |
+| **Bufferizar PDF inteiro** em `bytes` para cada item do lote | Código simples | OOM em lotes médios | Apenas arquivos pequenos com limite rígido documentado |
 | Dependência PDF “pesada” sem prova em **arm64** | Features ricas | Bloqueio de release Android | Só durante spike com **critério de saída** |
 
 ## Integration Gotchas
@@ -134,7 +134,7 @@ Mensagens do tipo “No matching distributions” ou “Could not find a version
 | Integration | Common Mistake | Correct Approach |
 |-------------|----------------|------------------|
 | **SAF / content URI** | Passar URI como se fosse path POSIX | Abrir via APIs Android (`ContentResolver.openInputStream`), copiar para temp se necessário |
-| **Partilha / download do resultado** | Escrever só para diretório interno opaco ao utilizador | Usar **FileProvider** / intent de partilha com URI com permissão temporária, conforme padrão Android |
+| **Compartilhamento / download do resultado** | Escrever só para diretório interno opaco ao usuário | Usar **FileProvider** / intent de compartilhamento com URI com permissão temporária, conforme padrão Android |
 | **Toga Android** | Ignorar `start_activity` e callbacks de resultado | Seguir documentação oficial para Intents quando o fluxo cruzar fronteira Java/Python |
 | **Briefcase `permission.*`** | Pedir `READ_MEDIA_*` sem necessidade | Pedir apenas permissões mapeadas ao caso (ex. galeria); rever doc Briefcase para efeitos colaterais em `features` |
 
@@ -142,10 +142,10 @@ Mensagens do tipo “No matching distributions” ou “Could not find a version
 
 | Trap | Symptoms | Prevention | When It Breaks |
 |------|----------|------------|----------------|
-| Pixmap alta resolução × N páginas | OOM, app a fechar | DPI cap, processar e libertar página a página | PDFs de muitas páginas ou páginas A3 digitalizadas |
+| Pixmap alta resolução × N páginas | OOM, app a fechar | DPI cap, processar e liberar página a página | PDFs de muitas páginas ou páginas A3 digitalizadas |
 | PDF com streams gigantes (vector art) | Congelamento, RAM em GB no desktop | Timeout/recusa, simplificar pipeline ou biblioteca | Anexos “impressos” de CAD ou slides complexos |
-| Lote **multi-ficheiro** em paralelo | Pico de RAM | Fila sequencial + limite explícito de ficheiros por operação | Utilizador seleciona dezenas de MB de uma vez |
-| Acumulação de temporários | Armazenamento cheio | Limpar `cache`/`files` após partilha bem-sucedida | Uso repetido no mesmo dia |
+| Lote **multi-arquivo** em paralelo | Pico de RAM | Fila sequencial + limite explícito de arquivos por operação | Usuário seleciona dezenas de MB de uma vez |
+| Acumulação de temporários | Armazenamento cheio | Limpar `cache`/`files` após compartilhamento bem-sucedido | Uso repetido no mesmo dia |
 
 ## Security Mistakes
 
@@ -154,26 +154,26 @@ Mensagens do tipo “No matching distributions” ou “Could not find a version
 | Vender **“sem cópia”** como **irreversível** | Fraude de expectativa, responsabilidade | Linguagem conservadora + testes de extração documentados |
 | Rasterizar por cima mantendo **texto invisível** | Recuperação trivial de texto | Pipeline de reconstrução + testes automatizados de “zero texto extraível” |
 | Manter **anotações / attachments** do PDF original | Dados sensíveis fora da área visível | Strip ou novo PDF mínimo |
-| Ficheiros temporários com nomes previsíveis em diretório legível | Leak para outras apps (consoante API level e permissões) | Diretório privado da app + apagar após uso |
+| Arquivos temporários com nomes previsíveis em diretório legível | Leak para outras apps (conforme API level e permissões) | Diretório privado da app + apagar após uso |
 | Logs de debug com **caminhos ou excertos** de documentos | Privacidade | Sem logs persistentes (alinhado ao out of scope, mas cuidado em builds de debug) |
 
 ## UX Pitfalls
 
 | Pitfall | User Impact | Better Approach |
 |---------|-------------|-----------------|
-| Processamento longo **sem progresso** | Utilizador assume crash e força fecho | Barra ou por página + cancelamento |
-| Falha genérica “Erro ao processar” | Abandono | Mensagens por causa (ficheiro demasiado grande, formato, memória) sem expor dados |
-| Output não abre na app de email do banco | “O app não funciona” | Testar com leitores comuns + tamanho de ficheiro |
-| Marca d’água ilegível em ecrãs pequenos | Reclamações | Pré-visualização ou ajuste dinâmico da diagonal/fonte |
+| Processamento longo **sem progresso** | Usuário assume crash e força fecho | Barra ou por página + cancelamento |
+| Falha genérica “Erro ao processar” | Abandono | Mensagens por causa (arquivo muito grande, formato, memória) sem expor dados |
+| Output não abre na app de email do banco | “O app não funciona” | Testar com leitores comuns + tamanho de arquivo |
+| Marca d’água ilegível em telas pequenos | Reclamações | Pré-visualização ou ajuste dinâmico da diagonal/fonte |
 
 ## "Looks Done But Isn't" Checklist
 
 - [ ] **Texto não copiável:** Verificar em pelo menos dois leitores (ex. Google PDF, Adobe) + tentativa de extração programática — não só desativar seleção na UI interna.
 - [ ] **OCR / camadas:** Abrir output em ferramenta que mostre estrutura de conteúdo; procurar texto invisível ou dicionários típicos de OCR.
-- [ ] **Android file path:** Testar pick de ficheiro da Drive, Downloads e galeria — não só ficheiro local “simples”.
-- [ ] **Lote:** Processar N>5 ficheiros médios sem reinício de processo.
-- [ ] **Fontes:** Presença de ficheiros de licença e embedding conforme OFL.
-- [ ] **Assinatura / empacotamento:** Artefacto `briefcase package` **assinado** antes de distribuição (Play ou sideload) — o template Briefcase indica que **não é utilizável sem assinatura**.
+- [ ] **Android file path:** Testar pick de arquivo da Drive, Downloads e galeria — não só arquivo local “simples”.
+- [ ] **Lote:** Processar N>5 arquivos médios sem reinício de processo.
+- [ ] **Fontes:** Presença de arquivos de licença e embedding conforme OFL.
+- [ ] **Assinatura / empacotamento:** Artefato `briefcase package` **assinado** antes de distribuição (Play ou sideload) — o template Briefcase indica que **não é utilizável sem assinatura**.
 
 ## Recovery Strategies
 
@@ -190,7 +190,7 @@ Mensagens do tipo “No matching distributions” ou “Could not find a version
 |---------|------------------|--------------|
 | Expectativa segurança vs rasterização | Definição de pipeline + copy de produto | Extração de texto + checklist “Looks done” |
 | OCR / camadas ocultas | Geração PDF endurecida | Inspeção estrutural + OCR de terceiros no output |
-| Ficheiros Android / URI | Integração entrada/saída | Matriz de origens (Drive, Downloads, fotos) |
+| Arquivos Android / URI | Integração entrada/saída | Matriz de origens (Drive, Downloads, fotos) |
 | Memória / lotes | Pipeline + limites | Testes com PDFs grandes e lote |
 | Licença de fontes | Conformidade inicial | Auditoria de assets legais |
 | Wheels Chaquopy | Spike dependências | CI ou build Android limpo |
@@ -202,16 +202,16 @@ Mensagens do tipo “No matching distributions” ou “Could not find a version
 - [py-pdf/pypdf — issues de memória / content streams grandes](https://github.com/py-pdf/pypdf/issues) — **MEDIUM** (casos específicos)  
 - [PyMuPDF — retenção de memória com `get_pixmap`](https://github.com/pymupdf/PyMuPDF/issues/3625) — **MEDIUM**  
 - [Dpdf — flatten vs rasterize (diferença de modelo mental)](https://www.dpdf.com/blog/flatten-vs-rasterize-pdf) — **MEDIUM** (educativo, não normativo legal)  
-- [PDF Tools — camadas ocultas / redacção](https://www.pdf-tools.com/pdf-knowledge/the-hidden-layers-of-pdf-redaction/) — **MEDIUM**  
+- [PDF Tools — camadas ocultas / redação](https://www.pdf-tools.com/pdf-knowledge/the-hidden-layers-of-pdf-redaction/) — **MEDIUM**  
 - [Liberation Fonts — LICENSE (SIL OFL)](https://github.com/liberationfonts/liberation-fonts/blob/main/LICENSE) — **HIGH** para licenciamento da família Liberation  
-- [BeeWare Toga — discussão / issues sobre diálogo de ficheiros no Android](https://github.com/beeware/toga/discussions/1990) — **MEDIUM** (verificar versão atual do projeto)  
+- [BeeWare Toga — discussão / issues sobre diálogo de arquivos no Android](https://github.com/beeware/toga/discussions/1990) — **MEDIUM** (verificar versão atual do projeto)  
 - [Relato: paths Android `briefcase run`](https://errorism.dev/issues/beeware-briefcase-no-such-file-or-directory-when-run-in-android) — **LOW** (terceiro; útil como sintoma)
 
 ## Play Store vs sideload (breve)
 
 - **Ambos** exigem **assinatura** do APK/AAB para instalação útil; a documentação Briefcase sublinha que o output de `briefcase package` **deve ser assinado** quer para Play quer para carregamento direto.  
 - **Play Store:** `version_code` monotónico, políticas de dados/privacidade (app “local” ainda pode precisar de declaração clara de ausência de rede se removerem `INTERNET` — hoje o template Briefcase menciona concessão automática de `INTERNET`; validar implicações de política).  
-- **Sideload:** utilizador ativa “fontes desconhecidas”; menor fricção de revisão mas **mesmos** desafios técnicos de **storage** e **assinatura**. Não é requisito do milestone; só **não confundir** sideload com “dispensa de cuidados de I/O ou segurança”.
+- **Sideload:** usuário ativa “fontes desconhecidas”; menor fricção de revisão mas **mesmos** desafios técnicos de **storage** e **assinatura**. Não é requisito do milestone; só **não confundir** sideload com “dispensa de cuidados de I/O ou segurança”.
 
 ---
 *Pitfalls research for: marca d’água local Android (Python/BeeWare, PDF endurecido)*  
