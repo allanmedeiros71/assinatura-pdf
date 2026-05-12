@@ -1,7 +1,8 @@
 # Requirements: MarcaJá
 
 **Defined:** 2026-05-12  
-**Core Value:** Marcar vários PDFs/imagens de uma vez e obter PDFs endurecidos (texto não copiável, sem OCR útil) no smartphone, 100% local.
+**Core Value:** Marcar vários PDFs/imagens de uma vez e obter PDFs endurecidos (texto não copiável, sem OCR útil) no smartphone, 100% local.  
+**Milestone ativo:** **v1.0 — Execução MVP** (implementar e validar as fases **1 a 5** do `.planning/ROADMAP.md`; requisitos abaixo são o escopo deste marco).
 
 ## v1 Requirements
 
@@ -110,4 +111,4 @@
 
 ---
 *Requirements defined: 2026-05-12*  
-*Last updated: 2026-05-12 after normalizing documentation to pt-BR*
+*Last updated: 2026-05-12 after starting milestone v1.0 Execução MVP*

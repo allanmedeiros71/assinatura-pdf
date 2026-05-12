@@ -8,6 +8,18 @@ App Android **100% local** (sem servidor e sem login) para o usuário enviar **P
 
 O usuário consegue, em **uma única tela**, marcar **vários arquivos de uma vez** e **baixar PDFs** com marca d'água visível e **proteção forte contra cópia de texto** (e sem camada OCR útil), no próprio smartphone.
 
+## Current Milestone: v1.0 Execução MVP
+
+**Goal:** Implementar e verificar o **MVP MarcaJá** seguindo o roadmap já definido (**fases 1 a 5**), sem expandir escopo para funcionalidades adiadas (ZIP, presets, iOS, etc.).
+
+**Target features (por fase do roadmap):**
+
+- **Fase 1:** app Android BeeWare com tela única Material, Ok/Sair, fonte open source incorporada e documentada.
+- **Fase 2:** seleção múltipla de arquivos, lista editável, campo de marca com limite de 200 caracteres e feedback claro.
+- **Fase 3:** motor PDF no dispositivo (com gate PyMuPDF vs plano B), cache/limpeza, saída PDF base por arquivo válido.
+- **Fase 4:** marca diagonal, geometria proporcional, multilinha, processamento em lote em série ao tocar Ok.
+- **Fase 5:** PDF endurecido (texto não copiável trivialmente, sem OCR útil), compartilhar/salvar, progresso e erros legíveis na UI.
+
 ## Requirements
 
 ### Validated
@@ -54,6 +66,7 @@ O usuário consegue, em **uma única tela**, marcar **vários arquivos de uma ve
 | BeeWare para Android | Requisito explícito do documento de ideia | — Pending |
 | Saída sempre PDF endurecido | Reduz extração trivial de texto vs. imagem pura | — Pending |
 | Sem backend | Requisito de privacidade e simplicidade | — Pending |
+| Marco **v1.0** = execução do roadmap MVP (fases 1–5) | Alinhar planeamento à entrega sem novas features fora do escopo já acordado | — Pending |
 
 ## Evolution
 
@@ -75,4 +88,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-12 after normalizing documentation to pt-BR*
+*Last updated: 2026-05-12 after starting milestone v1.0 Execução MVP*

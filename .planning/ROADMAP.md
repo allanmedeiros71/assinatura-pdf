@@ -2,6 +2,8 @@
 
 ## Overview
 
+**Marco v1.0 — Execução MVP:** as fases **1 a 5** abaixo compõem este marco; não há fases adicionais numeradas até concluir o MVP ou abrir um novo marco com `/gsd-new-milestone`.
+
 Do projeto Briefcase/Toga funcional no Android até o fluxo completo: escolher vários PDFs/imagens, definir texto de marca (com tipografia e geometria acordadas), processar em lote no dispositivo com progresso e erros claros, e obter PDFs endurecidos prontos para compartilhar ou salvar — com gate cedo de dependências nativas (Chaquopy/PyMuPDF vs plano B) para evitar retrabalho, alinhado a PITFALLS e ARCHITECTURE da pesquisa.
 
 ## Phases
