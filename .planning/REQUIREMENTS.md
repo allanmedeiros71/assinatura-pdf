@@ -48,7 +48,7 @@
 
 ### Plataforma e entrega
 
-- [ ] **PLAT-01**: O aplicativo é construída em **Python** e empacotada para **Android** com **BeeWare** (Briefcase/Toga), conforme decisão de projeto.
+- [ ] **PLAT-01**: O aplicativo é construído em **Python** e empacotada para **Android** com **BeeWare** (Briefcase/Toga), conforme decisão de projeto.
 
 ## v2 Requirements
 

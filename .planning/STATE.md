@@ -15,7 +15,7 @@ See: `.planning/PROJECT.md` (updated 2026-05-12)
 Phase: 1 of 5 (Fundação BeeWare e tela principal) — Marco v1.0  
 Plan: —  
 Status: Marco v1.0 iniciado — executar roadmap MVP existente  
-Last activity: 2026-05-12 — `/gsd-new-milestone` opção 1 (Execução MVP)
+Last activity: 2026-05-12 — `/gsd-discuss-phase 1` (CONTEXT + DISCUSSION-LOG)
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -61,5 +61,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-05-12  
-Stopped at: Marco v1.0 formalizado; próximo passo — planear/executar Fase 1  
+Stopped at: Fase 1 — discuss-phase concluída (`01-CONTEXT.md`)  
 Resume file: None
