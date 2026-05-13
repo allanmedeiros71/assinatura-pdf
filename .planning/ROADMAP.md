@@ -32,7 +32,7 @@ Do projeto Briefcase/Toga funcional no Android até o fluxo completo: escolher v
   3. A interface é reconhecível como Android moderno (Material / componentes Toga coerentes com Android no dispositivo).
   4. Os botões **Ok** e **Sair** estão visíveis na tela principal.
   5. A família tipográfica acordada (Arial ou equivalente open source, ex. Liberation Sans) está incorporada ou empacotada com menção de licença acessível ao projeto (README ou decisão documentada).
-**Plans**: TBD
+**Plans**: `01-01` (scaffold Briefcase/Toga `marcaja`), `01-02` (tela principal UI-SPEC + Liberation Sans + docs) — onda 2 depende de `01-01`
 **UI hint**: yes
 
 ### Phase 2: Sessão, lista e texto da marca
@@ -96,7 +96,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Fundação BeeWare e tela principal | 0/TBD | Not started | - |
+| 1. Fundação BeeWare e tela principal | 0/2 | Ready to execute | - |
 | 2. Sessão, lista e texto da marca | 0/TBD | Not started | - |
 | 3. Motor PDF no Android, cache e saída PDF base | 0/TBD | Not started | - |
 | 4. Marca diagonal, geometria e processamento em lote | 0/TBD | Not started | - |
