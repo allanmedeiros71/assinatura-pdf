@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 1 UI-SPEC approved
-last_updated: "2026-05-13T00:50:55.931Z"
-last_activity: 2026-05-13 -- Phase 1 execution started
+stopped_at: Fase 1 — planos 01-01 e 01-02 executados; aguardando UAT Android (01-HUMAN-UAT.md)
+last_updated: "2026-05-13T12:00:00.000Z"
+last_activity: 2026-05-13 — execução fase 1 (código + docs); smoke Android pendente
 progress:
   total_phases: 5
   completed_phases: 0
   total_plans: 2
-  completed_plans: 0
-  percent: 0
+  completed_plans: 2
+  percent: 20
 ---
 
 # Project State
@@ -28,18 +28,18 @@ See: `.planning/PROJECT.md` (updated 2026-05-12)
 
 ## Current Position
 
-Phase: 1 (Fundação BeeWare e tela principal) — EXECUTING
-Plan: 1 of 2
-Status: Executing Phase 1
-Last activity: 2026-05-13 -- Phase 1 execution started
+Phase: 1 (Fundação BeeWare e tela principal) — **código entregue**, UAT Android pendente
+Plan: 2 of 2 (SUMMARYs commitados)
+Status: Aguardando smoke em dispositivo (`01-HUMAN-UAT.md`)
+Last activity: 2026-05-13 — `/gsd-execute-phase 1` (implementação + verificação repo)
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [██░░░░░░░░] 20%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 0
+- Total plans completed: 2
 - Average duration: —
 - Total execution time: 0 h
 
@@ -47,7 +47,7 @@ Progress: [░░░░░░░░░░] 0%
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| — | — | — | — |
+| 1 | 2 | 2 | — |
 
 **Recent trend:** —
 
@@ -76,6 +76,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-05-13T00:41:25.911Z
-Stopped at: Phase 1 UI-SPEC approved
-Resume file: .planning/phases/01-fundacao-beeware-tela-principal/01-UI-SPEC.md
+Last session: 2026-05-13
+Stopped at: Fase 1 — UAT humano Android pendente
+Resume file: .planning/phases/01-fundacao-beeware-tela-principal/01-HUMAN-UAT.md
