@@ -1,0 +1,26 @@
+[build-system]
+requires = ["briefcase==0.4.2", "setuptools>=69", "wheel"]
+build-backend = "briefcase.build:build_backend"
+
+[project]
+name = "marcaja"
+version = "0.1.0"
+description = "Marca d'água em PDF e imagens no Android (app local)."
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = ["toga~=0.5.4"]
+
+[project.optional-dependencies]
+dev = ["briefcase==0.4.2"]
+
+[tool.briefcase]
+project_name = "MarcaJá"
+bundle = "dev.marcaja"
+version = "0.1.0"
+license = "MIT"
+
+[tool.briefcase.app.marcaja]
+formal_name = "MarcaJá"
+description = "Marca d'água em PDF e imagens no Android."
+sources = ["src/marcaja"]
+requires = ["toga~=0.5.4"]
