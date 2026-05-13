@@ -5,7 +5,7 @@ Aplicativo **Android** em **Python** ([BeeWare](https://beeware.org/)) para apli
 ## Estado do projeto
 
 - **Marco atual:** v1.0 — *Execução MVP* (fases 1 a 5 no roadmap).
-- **Código do app BeeWare:** em arranque; o repositório contém sobretudo **planejamento** (GSD) e a especificação em `projeto.md`.
+- **Código do app BeeWare:** pacote `src/marcaja` com Toga/Briefcase; ver secção **Desenvolvimento** abaixo.
 - **Documentação de produto e requisitos:** `.planning/PROJECT.md`, `.planning/REQUIREMENTS.md`, `projeto.md`.
 - **Roadmap e fases:** `.planning/ROADMAP.md` · contexto da Fase 1: `.planning/phases/01-fundacao-beeware-tela-principal/01-CONTEXT.md`.
 - **Pesquisa (stack, riscos, arquitetura):** `.planning/research/`.
@@ -27,18 +27,34 @@ Aplicativo **Android** em **Python** ([BeeWare](https://beeware.org/)) para apli
 | Empacotamento | [Briefcase](https://briefcase.beeware.org/) (Android) |
 | PDF / imagem | Ver `.planning/research/STACK.md` (incl. notas sobre motor no Android) |
 
-## Como desenvolver (quando o projeto BeeWare existir)
+## Desenvolvimento
 
-Os passos concretos (`briefcase new`, `briefcase dev android`, etc.) serão definidos no **plano da Fase 1**. Até lá:
+Pré-requisitos: **Python 3.12**, **JDK 17**, **Android SDK** (variável `ANDROID_HOME` ou `ANDROID_SDK_ROOT`), e venv com dependências do projeto.
 
-1. Lê `.planning/phases/01-fundacao-beeware-tela-principal/01-CONTEXT.md` e `.planning/research/SUMMARY.md`.
-2. Segue o fluxo GSD do repositório: por exemplo `/gsd-plan-phase 1` após discussão da fase.
+```bash
+python3.12 -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -U pip
+pip install -e ".[dev]"
+briefcase create android      # primeira vez / após mudar recursos nativos
+briefcase run android         # smoke no emulador ou dispositivo
+```
+
+O fluxo de UI completo no dispositivo é **verificação manual** (tela única, botões **Ok** e **Sair**). Em desktop Linux, `python -m marcaja` ou o entrypoint que o Briefcase gerar pode não estar disponível sem backend GTK; priorize `briefcase run` na plataforma alvo.
+
+## Fontes
+
+O equivalente open source a Arial usado no projeto é **Liberation Sans**, licenciada sob a **SIL Open Font License (OFL)**. O arquivo empacotado no repositório é:
+
+`src/marcaja/resources/fonts/LiberationSans-Regular.ttf`
 
 ## Estrutura útil do repositório
 
 ```text
 .
 ├── README.md              # este arquivo
+├── pyproject.toml         # Briefcase / Toga
+├── src/marcaja/           # código do app (app.py, recursos)
 ├── projeto.md             # especificação original
 ├── .planning/             # planejamento GSD (projeto, roadmap, requisitos, pesquisa)
 ├── .cursor/rules/         # regras do Cursor (ex.: pt-BR padrão)
@@ -51,7 +67,7 @@ Texto de produto e UI em **português do Brasil (pt-BR)** — ver `.cursor/rules
 
 ## Licença
 
-*A definir* — escolher licença (ex. MIT) quando o código público estiver estável.
+Metadados do app em `pyproject.toml` usam **MIT** para o pacote Python do MarcaJá. A fonte **Liberation Sans** segue a **SIL Open Font License (OFL)** (ver pasta `src/marcaja/resources/fonts/`).
 
 ---
 

@@ -63,7 +63,8 @@ O usuário consegue, em **uma única tela**, marcar **vários arquivos de uma ve
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| BeeWare para Android | Requisito explícito do documento de ideia | — Pending |
+| BeeWare para Android | Requisito explícito do documento de ideia | Em progresso — app `marcaja` em `src/marcaja` (Fase 1) |
+| Fonte marca d'água (equivalente Arial, WM-07) | Liberation Sans open source (OFL) empacotada | **Liberation Sans** — `src/marcaja/resources/fonts/LiberationSans-Regular.ttf` (OFL) |
 | Saída sempre PDF endurecido | Reduz extração trivial de texto vs. imagem pura | — Pending |
 | Sem backend | Requisito de privacidade e simplicidade | — Pending |
 | Marco **v1.0** = execução do roadmap MVP (fases 1–5) | Alinhar planeamento à entrega sem novas features fora do escopo já acordado | — Pending |
