@@ -16,14 +16,14 @@
 
 ### Entrada de arquivos
 
-- [ ] **FILE-01**: O usuário pode **selecionar múltiplos** arquivos numa ação (PDF e formatos de **imagem** comuns, ex. PNG/JPEG).
-- [ ] **FILE-02**: A lista de arquivos selecionados é **visível** antes de processar (nome ou identificação suficiente para distinguir entradas).
-- [ ] **FILE-03**: O usuário pode **remover** uma entrada da lista antes de processar (correção de erro simples sem abandonar a tela).
+- [x] **FILE-01**: O usuário pode **selecionar múltiplos** arquivos numa ação (PDF e formatos de **imagem** comuns, ex. PNG/JPEG).
+- [x] **FILE-02**: A lista de arquivos selecionados é **visível** antes de processar (nome ou identificação suficiente para distinguir entradas).
+- [x] **FILE-03**: O usuário pode **remover** uma entrada da lista antes de processar (correção de erro simples sem abandonar a tela).
 
 ### Texto da marca
 
-- [ ] **WM-01**: Existe um campo de texto para o conteúdo da marca d'água.
-- [ ] **WM-02**: O campo aceita no máximo **200 caracteres**; entradas inválidas são bloqueadas ou truncadas de forma **previsível** e comunicada (ex.: contador).
+- [x] **WM-01**: Existe um campo de texto para o conteúdo da marca d'água.
+- [x] **WM-02**: O campo aceita no máximo **200 caracteres**; entradas inválidas são bloqueadas ou truncadas de forma **previsível** e comunicada (ex.: contador).
 - [ ] **WM-03**: A marca renderizada corresponde ao **texto** introduzido (incluindo quebras de linha introduzidas pelo usuário, se aplicável).
 
 ### Geometria e tipografia da marca
@@ -84,11 +84,11 @@
 | UI-02 | Phase 1 | Complete |
 | UI-03 | Phase 1 | Complete |
 | WM-07 | Phase 1 | Complete |
-| FILE-01 | Phase 2 | Pending |
-| FILE-02 | Phase 2 | Pending |
-| FILE-03 | Phase 2 | Pending |
-| WM-01 | Phase 2 | Pending |
-| WM-02 | Phase 2 | Pending |
+| FILE-01 | Phase 2 | Complete |
+| FILE-02 | Phase 2 | Complete |
+| FILE-03 | Phase 2 | Complete |
+| WM-01 | Phase 2 | Complete |
+| WM-02 | Phase 2 | Complete |
 | OUT-01 | Phase 3 | Pending |
 | PROC-02 | Phase 3 | Pending |
 | PROC-03 | Phase 3 | Pending |
