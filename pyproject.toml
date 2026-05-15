@@ -15,7 +15,7 @@ requires-python = ">=3.10,<3.13"
 dependencies = []
 
 [project.optional-dependencies]
-dev = ["briefcase==0.4.2", "toga~=0.5.4"]
+dev = ["briefcase==0.4.2", "toga~=0.5.4", "pytest>=8"]
 
 [tool.briefcase]
 project_name = "MarcaJá"
