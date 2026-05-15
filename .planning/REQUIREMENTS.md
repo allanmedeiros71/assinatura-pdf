@@ -8,9 +8,9 @@
 
 ### Interface (uma tela)
 
-- [ ] **UI-01**: Ao abrir o app, o usuário vê **uma única** tela principal (sem fluxo de onboarding obrigatório).
-- [ ] **UI-02**: A interface segue padrões **Android modernos** (Material Design / componentes nativos BeeWare/Toga coerentes com Android).
-- [ ] **UI-03**: A tela expõe explicitamente o botão **Ok** e o botão **Sair**.
+- [x] **UI-01**: Ao abrir o app, o usuário vê **uma única** tela principal (sem fluxo de onboarding obrigatório).
+- [x] **UI-02**: A interface segue padrões **Android modernos** (Material Design / componentes nativos BeeWare/Toga coerentes com Android).
+- [x] **UI-03**: A tela expõe explicitamente o botão **Ok** e o botão **Sair**.
 - [ ] **UI-04**: Durante o processamento em lote, o usuário vê **indicador de progresso** (ex.: arquivo atual / porcentagem) para evitar bloqueio percebido.
 - [ ] **UI-05**: Em falha de processamento de um arquivo, o usuário vê **mensagem de erro legível** identificando o arquivo ou a causa em termos humanos.
 
@@ -31,7 +31,7 @@
 - [ ] **WM-04**: A inclinação da marca está **alinhada** com a diagonal que liga o canto **inferior esquerdo** ao **superior direito** da página (ou da página rasterizada equivalente).
 - [ ] **WM-05**: O tamanho da fonte é **proporcional** de modo a ocupar de forma visualmente equilibrada a região ao longo dessa diagonal (critério observável em PDF de teste de referência).
 - [ ] **WM-06**: Se o texto for longo, o sistema **quebra em várias linhas** de forma a manter legibilidade mínima acordada (critério de aceite com amostras no plano de testes).
-- [ ] **WM-07**: Usa fonte da família **Arial** ou equivalente **open source** licenciada para incorporação (ex.: Liberation Sans, Arimo), documentada em `Key Decisions` ou README.
+- [x] **WM-07**: Usa fonte da família **Arial** ou equivalente **open source** licenciada para incorporação (ex.: Liberation Sans, Arimo), documentada em `Key Decisions` ou README.
 
 ### Processamento e pipeline
 
@@ -48,7 +48,7 @@
 
 ### Plataforma e entrega
 
-- [ ] **PLAT-01**: O aplicativo é construído em **Python** e empacotada para **Android** com **BeeWare** (Briefcase/Toga), conforme decisão de projeto.
+- [x] **PLAT-01**: O aplicativo é construído em **Python** e empacotada para **Android** com **BeeWare** (Briefcase/Toga), conforme decisão de projeto.
 
 ## v2 Requirements
 
@@ -79,11 +79,11 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| PLAT-01 | Phase 1 | Pending |
-| UI-01 | Phase 1 | Pending |
-| UI-02 | Phase 1 | Pending |
-| UI-03 | Phase 1 | Pending |
-| WM-07 | Phase 1 | Pending |
+| PLAT-01 | Phase 1 | Complete |
+| UI-01 | Phase 1 | Complete |
+| UI-02 | Phase 1 | Complete |
+| UI-03 | Phase 1 | Complete |
+| WM-07 | Phase 1 | Complete |
 | FILE-01 | Phase 2 | Pending |
 | FILE-02 | Phase 2 | Pending |
 | FILE-03 | Phase 2 | Pending |
