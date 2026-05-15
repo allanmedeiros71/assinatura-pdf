@@ -13,7 +13,7 @@ Do projeto Briefcase/Toga funcional no Android até o fluxo completo: escolher v
 - Integer phases (1, 2, 3): Planned milestone work
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
-- [ ] **Phase 1: Fundação BeeWare e tela principal** — App Android em Python empacotado com BeeWare; uma tela Material; botões Ok/Sair; fonte open source incorporada e documentada.
+- [x] **Phase 1: Fundação BeeWare e tela principal** — App Android em Python empacotado com BeeWare; uma tela Material; botões Ok/Sair; fonte open source incorporada e documentada. (completed 2026-05-15)
 - [ ] **Phase 2: Sessão, lista e texto da marca** — Seleção múltipla de arquivos, lista editável e campo de marca com limite de 200 caracteres comunicado ao usuário.
 - [ ] **Phase 3: Motor PDF no Android, cache e saída PDF base** — Build Android com motor escolhido (ou fachada + ramo provado); política de cache/limpeza; cada entrada válida gera um PDF de resultado (critério de pipeline antes do endurecimento total).
 - [ ] **Phase 4: Marca diagonal, geometria e processamento em lote** — Marca alinhada à diagonal, tipografia proporcional, multilinha, texto refletido no output; processamento em série no dispositivo ao tocar Ok.
@@ -96,7 +96,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Fundação BeeWare e tela principal | 2/2 | UAT humano pendente (Android) | - |
+| 1. Fundação BeeWare e tela principal | 2/2 | Complete    | 2026-05-15 |
 | 2. Sessão, lista e texto da marca | 0/TBD | Not started | - |
 | 3. Motor PDF no Android, cache e saída PDF base | 0/TBD | Not started | - |
 | 4. Marca diagonal, geometria e processamento em lote | 0/TBD | Not started | - |
