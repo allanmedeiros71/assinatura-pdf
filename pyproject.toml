@@ -11,10 +11,11 @@ version = "0.1.0"
 description = "Marca d'água em PDF e imagens no Android (app local)."
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
-dependencies = ["toga~=0.5.4"]
+# Toga GTK fica no extra `dev` — no Android o Chaquopy não pode resolver `toga-gtk`/pycairo.
+dependencies = []
 
 [project.optional-dependencies]
-dev = ["briefcase==0.4.2"]
+dev = ["briefcase==0.4.2", "toga~=0.5.4"]
 
 [tool.briefcase]
 project_name = "MarcaJá"
@@ -26,4 +27,4 @@ license = "MIT"
 formal_name = "MarcaJá"
 description = "Marca d'água em PDF e imagens no Android."
 sources = ["src/marcaja"]
-requires = ["toga~=0.5.4"]
+requires = ["toga-android~=0.5.4"]

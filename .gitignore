@@ -5,3 +5,6 @@ __pycache__/
 dist/
 build/
 .android/
+
+# Briefcase (logs locais de create/build/run)
+logs/
