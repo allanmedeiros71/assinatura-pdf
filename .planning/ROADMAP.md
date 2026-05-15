@@ -46,7 +46,7 @@ Do projeto Briefcase/Toga funcional no Android até o fluxo completo: escolher v
   3. O usuário pode **remover** uma entrada da lista sem sair da tela principal.
   4. Existe um campo de texto para o conteúdo da marca d'água.
   5. O campo aceita no máximo **200 caracteres**; entradas inválidas são bloqueadas ou truncadas de forma previsível e o usuário vê feedback (ex.: contador ou mensagem curta).
-**Plans**: TBD
+**Plans**: `02-01` (session.py + testes), `02-02` (UI picker, lista, marca, Ok) — onda 2 depende de `02-01`
 
 ### Phase 3: Motor PDF no Android, cache e saída PDF base
 **Goal**: O pipeline corre no dispositivo com escrita em cache documentada e gera **PDF** como resultado por arquivo válido, após validação empírica do motor no Android (incluindo plano B se necessário), sem depender de backend.
